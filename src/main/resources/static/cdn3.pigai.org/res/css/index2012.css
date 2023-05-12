@@ -2,7 +2,9 @@
 body{margin:0 auto;font:12px/1.6em Verdana,Helvetica,Arial,sans-serif;background:#ffffff url(../images/2012/bg.gif);}
 /*body{margin:0 auto;font:12px/1.6em Verdana,Helvetica,Arial,sans-serif;background:#ffffff url(../2017/img/bg.jpg) no-repeat 50% 0;}*/
 a:link,a:visited {text-decoration:none;color:#297ACC}
-a:hover{text-decoration:underline;color:#1E1EAE }
+a:hover{
+    /*text-decoration:underline;*/
+    color:#1E1EAE }
 button{background:url('my.gif') 0 -40px;font:15px "微软雅黑",sans-serif;border:none;cursor:pointer;
 	height:29px;margin:0;outline:0;vertical-align:top;
 	padding:0 5px;

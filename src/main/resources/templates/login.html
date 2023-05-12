@@ -13,7 +13,7 @@
 	<div id="wrapper">
 		<div>
 <!--			<img src="../assets/img/zhihu_logo.png" />-->
-			<p style="font-size: 26px;font-weight: bold">文本的论点挖掘分析系统</p>
+			<p style="font-size: 26px;font-weight: bold">基于论证的作文自动评分系统</p>
 			<h2>分析文本的论证结构，找论点，查论据，一步就行！</h2>
 		</div>
 		<nav class="switch_nav">
@@ -233,7 +233,8 @@
 
 						if (data.code == 200) {//根据返回值进行跳转
 							alert("登录成功！")
-							window.location.href = 'demo1';
+							// window.location.href = 'demo1';
+							window.location.href = 'index1';
 						}
 						else{
 							alert(data.msg);

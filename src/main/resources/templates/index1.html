@@ -7,13 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="Pragma" CONTENT="no-cache">
 <title>第2369500号 活动-第2369500号作文-批改网</title>
-<link href="//cdn3.pigai.org//res/css/index2012.css?d=20170922" rel="stylesheet" type="text/css" />
+<!--<link href="//cdn3.pigai.org//res/css/index2012.css?d=20170922" rel="stylesheet" type="text/css" />-->
+<link href="/cdn3.pigai.org/res/css/index2012.css" rel="stylesheet" type="text/css" />
 <script src="//cdn3.pigai.org//res/javascript/jquery-min.js" type="text/javascript" language="javascript"></script>
 
-<!--	<link rel="stylesheet" href="/assets/js/layui/css/layui.css">-->
+	<link rel="stylesheet" href="/assets/js/layui/css/layui.css">
 <!--	<script src="/assets/js/jquery-3.2.1.min.js"></script>-->
-<!--	<script src="/assets/js/layui/layui.js"></script>-->
-<!--	<script src="/assets/js/bootstrap/js/bootstrap.min.js"></script>-->
+	<script src="/assets/js/layui/layui.js"></script>
+	<script src="/assets/js/bootstrap/js/bootstrap.min.js"></script>
 
  <script>
 
@@ -35,56 +36,87 @@
 <script src="//cdn3.pigai.org//res/javascript/user.common.js?d=20160411" type="text/javascript" language="javascript"></script>
 <script src="//cdn3.pigai.org//res/javascript/float.0.1.js?d=2018011501" type="text/javascript" language="javascript"></script>
 <link href="//cdn3.pigai.org//res/css/reg2.css?d=20220510" rel="stylesheet" type="text/css" />
-<link href="//cdn3.pigai.org//res/css/stu2012.css?d=202010155" rel="stylesheet" type="text/css" />
+<!--<link href="//cdn3.pigai.org//res/css/stu2012.css?d=202010155" rel="stylesheet" type="text/css" />-->
+<link href="/cdn3.pigai.org/res/css/stu2012.css" rel="stylesheet" type="text/css" />
+<!--<link href="/cdn3.pigai.org/res/css/test1.css" rel="stylesheet" type="text/css" />-->
 
 <link rel="stylesheet" href="//cdn3.pigai.org//res/message/css/notice.min.css">
 <link href="//cdn3.pigai.org//res/css/ui-dialog.css" rel="stylesheet"/>
+
+<!--	<link rel="stylesheet" href="/assets/js/layui/css/layui.css">-->
+<!--	<script src="/assets/js/jquery-3.2.1.min.js"></script>-->
+<!--	<script src="/assets/js/layui/layui.js"></script>-->
+<!--	<script src="/assets/js/bootstrap/js/bootstrap.min.js"></script>-->
 
 </head>
 
 <body >
 
+<!--导航栏test-->
+<div class="top_box">
+	<div class="layui-layout layui-layout-admin">
+		<!--        <%&#45;&#45;    nav_try&#45;&#45;%>-->
+		<div class="layui-header" style="background: rgb(19,29,47); opacity: 1">
+			<!--            <div class="layui-logo">You Are Right</div>-->
+			<div class="layui-logo" ><a href="index" style="color: lightblue">作文自动评分系统</a></div>
+			<!-- 头部区域（可配合layui已有的水平导航） -->
+			<ul class="layui-nav layui-layout-left">
+				<li class="layui-nav-item layui-this"><a href="index1">作文自测</a></li>
+<!--				<li class="layui-nav-item"><a href="">我的班级</a></li>-->
+<!--				<li class="layui-nav-item"><a href="">个人信息</a></li>-->
+				<li class="layui-nav-item"><a href="login">退出登录</a></li>
+			</ul>
+			<script>
+				//JavaScript代码区域
+				layui.use('element', function() {
+					var element = layui.element;
+				});
+			</script>
+		</div>
+	</div>
 
+</div>
 
  <div id="st_pigai">
 	<a name="top"></a>
-  <div id="jeHead"  >
-	<div id="jeHeadW">
 
-<div id="jeLogo" class="fl"><a href="/index.php" name="top">
-		<img src="//cdn3.pigai.org//res/images/2012/logo.png" alt="1秒钟改1篇作文" border="0"/>
-</a></div>
+<!--  <div id="jeHead"  >-->
+<!--&lt;!&ndash;	<div id="jeHeadW">&ndash;&gt;-->
 
-
-		<div id="jeUserInfo" class="fr"><span id="pigai_userinfo" content="0"></span></div>
-		<div class="cl"></div>
-	</div>
-
-	  <ul id="header_navi">
-        <li class="current" ><i class="navi_l"></i><a href="/index.php?c=write">我的作文</a><i class="navi_r"></i></li>
-        <li class=""><i class="navi_l"></i><a href="/?c=v2&a=write&rid=10">自测</a><i class="navi_r"></i></li>
-                <li><i class="navi_l"></i><a href="/index.php?c=write&a=myclass">班级</a><i class="navi_r"></i></li>
-                  <li class=""><i class="navi_l"></i><a href="http://tiku.pigai.org">题库</a><i class="navi_r"></i></li>
+<!--&lt;!&ndash;<div id="jeLogo" class="fl"><a href="/index.php" name="top">&ndash;&gt;-->
+<!--&lt;!&ndash;		<img src="//cdn3.pigai.org//res/images/2012/logo.png" alt="1秒钟改1篇作文" border="0"/>&ndash;&gt;-->
+<!--&lt;!&ndash;</a></div>&ndash;&gt;-->
 
 
-            <li  style="position: relative;"><i class="navi_l"></i><a href="/?c=activity" target="_blank">精彩活动</a><i class="navi_r"></i></li>
-                      <li  style="position: relative;"><i class="navi_l"></i><a href="http://rengong.pigai.org/index.php?c=acorrect" target="_blank">名师闪批</a><i class="navi_r"></i><span  style="font-size:11px; position:absolute; right:-18px;top:-5px;z-index:1006;color:Red">New</span></li>
-            <!-- <li  style="position: relative;"><i class="navi_l"></i><a href="http://gj.pigai.org/pc/" target="_blank">实用工具</a><i class="navi_r"></i><span  style="font-size:11px; position:absolute; right:-18px;top:-5px;z-index:1006;color:Red">New</span></li> -->
-                    <li  style="position: relative;"><i class="navi_l"></i><a href="/?c=test&a=pad">全屏版</a><i class="navi_r"></i></li>
-                                                <li style="width:25px;"> </li>
-       </ul>
+<!--&lt;!&ndash;		<div id="jeUserInfo" class="fr"><span id="pigai_userinfo" content="0"></span></div>&ndash;&gt;-->
+<!--&lt;!&ndash;		<div class="cl"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;	</div>&ndash;&gt;-->
+<!--&lt;!&ndash;导航栏&ndash;&gt;-->
+<!--	  <ul id="header_navi">-->
+<!--        <li class="current" ><i class="navi_l"></i><a href="/index.php?c=write">我的作文</a><i class="navi_r"></i></li>-->
+<!--        <li class=""><i class="navi_l"></i><a href="/?c=v2&a=write&rid=10">自测</a><i class="navi_r"></i></li>-->
+<!--                <li><i class="navi_l"></i><a href="/index.php?c=write&a=myclass">班级</a><i class="navi_r"></i></li>-->
+<!--                  <li class=""><i class="navi_l"></i><a href="http://tiku.pigai.org">题库</a><i class="navi_r"></i></li>-->
 
-  </div>
+
+<!--            <li  style="position: relative;"><i class="navi_l"></i><a href="/?c=activity" target="_blank">精彩活动</a><i class="navi_r"></i></li>-->
+<!--                      <li  style="position: relative;"><i class="navi_l"></i><a href="http://rengong.pigai.org/index.php?c=acorrect" target="_blank">名师闪批</a><i class="navi_r"></i><span  style="font-size:11px; position:absolute; right:-18px;top:-5px;z-index:1006;color:Red">New</span></li>-->
+<!--            &lt;!&ndash; <li  style="position: relative;"><i class="navi_l"></i><a href="http://gj.pigai.org/pc/" target="_blank">实用工具</a><i class="navi_r"></i><span  style="font-size:11px; position:absolute; right:-18px;top:-5px;z-index:1006;color:Red">New</span></li> &ndash;&gt;-->
+<!--                    <li  style="position: relative;"><i class="navi_l"></i><a href="/?c=test&a=pad">全屏版</a><i class="navi_r"></i></li>-->
+<!--                                                <li style="width:25px;"> </li>-->
+<!--       </ul>-->
+
+<!--  </div>-->
   <!--<div class="tips2">-->
 <!--注意：批改网将于2021年12月31日-2022年1月5日对服务器进行扩容。若遇使用异常情况时，请耐心等待，系统服务将逐步恢复正常。-->
 <!--</div>-->
 <!--百万同题领证书广告位-->
-<a href="http://www.pigai.org/zt/2022/index.php?act=zs" target="_blank">
-    <div id="bwttPrize" style="position: fixed;bottom: 300px;width: 50px;height: 50px;right: 0;background:linear-gradient(#ff215b, #fc552f);color:#fff;border-radius:5px;text-align:center;line-height: 25px;display: none;box-shadow:0 3px 14px rgba(255,30,90,0.4);">
-        领取<br/>
-        证书
-    </div>
-</a>
+<!--<a href="http://www.pigai.org/zt/2022/index.php?act=zs" target="_blank">-->
+<!--    <div id="bwttPrize" style="position: fixed;bottom: 300px;width: 50px;height: 50px;right: 0;background:linear-gradient(#ff215b, #fc552f);color:#fff;border-radius:5px;text-align:center;line-height: 25px;display: none;box-shadow:0 3px 14px rgba(255,30,90,0.4);">-->
+<!--        领取<br/>-->
+<!--        证书-->
+<!--    </div>-->
+<!--</a>-->
 <div id="prizeWrapper" style="background: rgba(0,0,0,0.5);width: 100%;height: 100%;position: absolute;top: 0;bottom: 0;left: 0;right:0;z-index: 2000;display: none; ">
     <div style="background: #fff;border-radius:10px;width: 600px;height: 300px;margin-top:10%;display: flex;flex-flow: column;justify-content: center;position: relative;">
         <p id="hiddenBtn" style="font-size: 20px;position: absolute;top: 10px;right: 20px;cursor: pointer;">×</p>
@@ -176,23 +208,23 @@
 	<!--div style="  position: absolute; right: -120px;width: 120px; height: 200px; top:300px;" onclick="this.style.display='none'"><img src="//cdn.pigai.org/d3/hongbao/s.png"></div-->
 
 
-<div id="user_nav" >
-	<div id="user_navW">
-		<span  style="color:#999999">当前位置：</span>
-		<a href="/">我的作文</a>
+<!--<div id="user_nav" >-->
+<!--	<div id="user_navW">-->
+<!--		<span  style="color:#999999">当前位置：</span>-->
+<!--		<a href="/">我的作文</a>-->
 
-		<span class="nav_split">-></span>
-						<span>第2369500号 活动-第2369500号作文</span>
-				<div class="cl"></div>
-	</div>
-
-
+<!--		<span class="nav_split">-></span>-->
+<!--						<span>第2369500号 活动-第2369500号作文</span>-->
+<!--				<div class="cl"></div>-->
+<!--	</div>-->
 
 
 
 
 
-</div>
+
+
+<!--</div>-->
 
 
 
@@ -217,8 +249,8 @@
 	<div id="myWriteContent">
 	 <div id="sponeLeft">
 		<div id="etitle">
-						<span id="swTitle">
-			第2369500号 活动  			</span>
+<!--						<span id="swTitle">第2369500号 活动</span>-->
+						<span id="swTitle">作文评分分析</span>
 					</div><!-- end etitle -->
 
 		<div id="sponeLeftT" style="width:100%">
@@ -452,11 +484,11 @@ Consequently I hold the view that we should do what we can to protect the safety
 				 <div class="pingyu"  date="2015/10/23" >
 					<div class="score_line" style="top:0px;margin:10px 0;"> </div>
 
-				 <div  class="pingyuW" >
-				 				 <a href="http://bbs.pigai.org/t13952.html" target="_blank" style="font-size:12px;">评语</a>：<span style="font-size:12px;" content="" id="allpingyu_txt">
-				 文章词汇表达丰富，高级词汇积累做的也很棒；过渡词很丰富，衔接词同时使用的恰到好处；作者句法基础较为扎实。				 </span>
+<!--				 <div  class="pingyuW" >-->
+<!--				 				 <a href="http://bbs.pigai.org/t13952.html" target="_blank" style="font-size:12px;">评语</a>：<span style="font-size:12px;" content="" id="allpingyu_txt">-->
+<!--				 文章词汇表达丰富，高级词汇积累做的也很棒；过渡词很丰富，衔接词同时使用的恰到好处；作者句法基础较为扎实。				 </span>-->
 
-				 </div>
+<!--				 </div>-->
 
 				 </div>
 				 <!-- end  pingyu  -->
@@ -1696,28 +1728,26 @@ iciba_param['context']=[ ['Dict'],['jukuu',''],['kp_vs','']  ]; //,['kp','']
 
 
 
- 	<div id="lg_footer">
-		<div id="lg_footerm" >
-							 <div id="lg_info">
-			  <a href="/zt/writing/" target="_blank" title="批改网2022年精彩写作大赛" >作文大赛</a> | <a href="#" target="_blank">写作联盟</a> | <a href="/zt/mobile/" target="_blank">手机版</a>
-			 			 | <a href="/?c=write&chview=2017">体验新版</a>
-			 			   			 | <a href="/?c=teacher&a=chongzhi"   target="_blank" onclick="javascript:bdTonji('index','foot-click','foot-click-chongzhi');">批改卡充值</a>
-			 | <a href="/?c=activity"   target="_blank" onclick="javascript:bdTonji('index','foot-click','foot-click-hongdong');">精彩活动</a>
+<!-- 	<div id="lg_footer">-->
+<!--		<div id="lg_footerm" >-->
+<!--							 <div id="lg_info">-->
+<!--			  <a href="/zt/writing/" target="_blank" title="批改网2022年精彩写作大赛" >作文大赛</a> | <a href="#" target="_blank">写作联盟</a> | <a href="/zt/mobile/" target="_blank">手机版</a>-->
+<!--			 			 | <a href="/?c=write&chview=2017">体验新版</a>-->
+<!--			 			   			 | <a href="/?c=teacher&a=chongzhi"   target="_blank" onclick="javascript:bdTonji('index','foot-click','foot-click-chongzhi');">批改卡充值</a>-->
+<!--			 | <a href="/?c=activity"   target="_blank" onclick="javascript:bdTonji('index','foot-click','foot-click-hongdong');">精彩活动</a>-->
 
 
+<!--								 <br>-->
+<!--<a href="/?c=us&a=contact&id=1" target="_blank">关于我们</a> &lt;!&ndash;| <a href="/?c=us&a=produce&id=1"  target="_blank">新闻中心</a>&ndash;&gt; | <a href="/?c=us&a=mem&id=1" target="_blank">诚聘英才</a> | <a href="/about/help.html" target="_blank">快速入门</a> | <a href="/?a=kaitong&kt_type=3" target="_blank">预约上门服务</a>-->
 
+<!--			<br>-->
+<!--			<span style="font-size: 12px;">Copyright 2010-2023 PIGAI.ORG 版权所有 经营许可证编号：<a href="https://beian.miit.gov.cn/" target="_blank">京ICP备13021860号</a></span>-->
 
-								 <br>
-<a href="/?c=us&a=contact&id=1" target="_blank">关于我们</a> <!--| <a href="/?c=us&a=produce&id=1"  target="_blank">新闻中心</a>--> | <a href="/?c=us&a=mem&id=1" target="_blank">诚聘英才</a> | <a href="/about/help.html" target="_blank">快速入门</a> | <a href="/?a=kaitong&kt_type=3" target="_blank">预约上门服务</a>
-
-			<br>
-			<span style="font-size: 12px;">Copyright 2010-2023 PIGAI.ORG 版权所有 经营许可证编号：<a href="https://beian.miit.gov.cn/" target="_blank">京ICP备13021860号</a></span>
-
-		 </div>
-		 <div id="lg_tel">客服电话：400-888-6721<div>
-		 <a href="http://kefu.pigai.org/index.php/user" target="_blank"><img src="//cdn3.pigai.org//res/images/qq-online.png"></a>		 </div> </div>
-			</div>
-	</div>
+<!--		 </div>-->
+<!--		 <div id="lg_tel">客服电话：400-888-6721<div>-->
+<!--		 <a href="http://kefu.pigai.org/index.php/user" target="_blank"><img src="//cdn3.pigai.org//res/images/qq-online.png"></a>		 </div> </div>-->
+<!--			</div>-->
+<!--	</div>-->
 
 
 </div> <script>
