@@ -304,19 +304,21 @@ Consequently I hold the view that we should do what we can to protect the safety
 			<span id="wbar_print">
 <!--				<input type="button" value="开始分析" onclick="javascript:window.print();" class="bottonV4"/>-->
 <!--			<button id="submit1" type="button" class="layui-btn layui-btn-radius">开始分析</button>-->
-			<button id="submit1" type="button" style="
-    width: 80px;
-    height: auto;
-    border: 1px solid black;
-    margin: auto;
-">开始分析</button>
+<!--			<button id="submit1" type="button" style="-->
+<!--    width: 80px;-->
+<!--    height: auto;-->
+<!--    border: 1px solid black;-->
+<!--    margin: auto;-->
+<!--">开始分析</button>-->
+			<button id="submit1" type="button" class="layui-btn layui-btn-sm">开始分析</button>
 			</span>
-			<button id="submit2" type="button" style="
-    width: 80px;
-    height: auto;
-    border: 1px solid black;
-    /*margin: auto;*/
-">取消标注</button>
+<!--			<button id="submit2" type="button" style="-->
+<!--    width: 80px;-->
+<!--    height: auto;-->
+<!--    border: 1px solid black;-->
+<!--    /*margin: auto;*/-->
+<!--">取消标注</button>-->
+			<button id="submit2" type="button" class="layui-btn layui-btn-sm">取消标注</button>
 			</span>
 			<div id="pigai-qrcode" style="display:none; position:absolute;right:70px; bottom:20px; z-index:12; width:120px;height:120px; border:1px solid #999;" content="https://tiku.pigai.org/?m=Home&c=Public&a=pigaiCode&eid=136253087&hash=568ffba2cf02cfd1550917f3cffde546&ts=2&from=" data-open="0"></div>
 		</div>
@@ -1512,7 +1514,7 @@ Consequently I hold the view that we should do what we can to protect the safety
 
 
 
-					// $("#submit1").css("color","#fff");
+					$("#submit1").css("color","#fff");
 					$("#submit1").text("开始分析");
 					$("#submit1").attr('disabled',false);
 					$(".loading").hide();
