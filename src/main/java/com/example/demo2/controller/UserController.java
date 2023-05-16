@@ -35,8 +35,15 @@ public class UserController {
                               Model model, HttpSession session){
         System.out.println("loginController");
         //用从前端获取的username、password进行查询
+//        System.out.println(username);
+//        System.out.println(password);
         User user1 = userMapper.queryUserByUp(username,password);
+//        List<User> user1 = userMapper.queryUserByUp(username);
+//        User user2 = userMapper.queryUserByUp("qqq","qqq");
+//        List<User> user2 = userMapper.queryUserByUp("qqq");
+//        System.out.println("user2 "+user2);
 
+        System.out.println(user1);
         if (!(user1==null)){
             session.setAttribute("loginUser",username);
 //            return "redirect:/main.html";
@@ -60,14 +67,19 @@ public class UserController {
 
         List<User> user1 = userMapper.queryUserByUserName(username);
 
+//        System.out.println(user1);
+
         if (!user1.isEmpty()){
             model.addAttribute("msg","用户名存在");
 //            return "register";
             return Result.error("456","用户名已存在！");
         } else {
             //保存输入的用户名和密码
-            user.setUsername(username);
+//            user.setUsername(username);
+            user.setStudentId("");
+            user.setStudentName(username);
             user.setPassword(password);
+//            System.out.println(user);
             userMapper.addUser(user);
 //            session.setAttribute("loginUser",username);
             model.addAttribute("msg","注册成功");

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.AdminUserMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.User">
+        <id column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="student_id" jdbcType="VARCHAR" property="studentId"/>
+        <result column="login_password" jdbcType="VARCHAR" property="password"/>
+        <result column="student_name" jdbcType="VARCHAR" property="studentName"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        user_id, student_id, login_password, student_name
+    </sql>
+
+    <select id="findUserList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from users
+        <if test="start!=null and limit!=null">
+            limit #{start},#{limit}
+        </if>
+    </select>
+
+    <select id="getTotalUser" parameterType="Map" resultType="int">
+        select count(*) from users
+    </select>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from users
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByLoginName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from users
+        where login_name = #{loginName}
+    </select>
+    <select id="selectByLoginNameAndPasswd" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from users
+        where login_name = #{loginName} and password = #{password}
+    </select>
+
+
+    <update id="resetUserPassword">
+        update users
+        set login_password = 123456 where user_id in
+        <foreach item="id" collection="ids" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>

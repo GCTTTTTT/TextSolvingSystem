@@ -11,12 +11,13 @@ import java.util.List;
 @Component
 public interface UserMapper {
     //通过账号密码来查询信息
-    User queryUserByUp(@RequestParam("username") String username, @RequestParam("password") String password);
+    User queryUserByUp(@RequestParam("username") String studentName, @RequestParam("password") String loginPassword);
+//    List<User> queryUserByUp(@RequestParam("username") String studentName);
     //查询所有用户
     List<User> queryUserList();
     //增加用户
     int addUser(@RequestParam("user") User user);
     //通过用户名来进行查询
-    List<User> queryUserByUserName(@RequestParam("username") String username);
+    List<User> queryUserByUserName(@RequestParam("username") String studentName);
 
 }

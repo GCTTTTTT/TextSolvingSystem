@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.AdminEssayMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.AdminEssay">
+        <id column="admin_essay_id" jdbcType="INTEGER" property="adminEssayId"/>
+        <id column="admin_user_id" jdbcType="INTEGER" property="adminUserId"/>
+        <result column="essay_title" jdbcType="VARCHAR" property="essayTitle"/>
+        <result column="essay_require" jdbcType="VARCHAR" property="essayRequire"/>
+        <result column="essay_example" jdbcType="VARCHAR" property="essayExample"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        admin_essay_id, admin_user_id, essay_title, essay_require, essay_example
+    </sql>
+    <select id="findEssayList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from admin_essay
+        <if test="start!=null and limit!=null">
+            limit #{start},#{limit}
+        </if>
+    </select>
+    <select id="getTotalEssay" parameterType="Map" resultType="int">
+        select count(*) from admin_essay
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from admin_essay
+        where admin_essay_id = #{adminEssayId,jdbcType=INTEGER}
+    </select>
+    <select id="findEssayByNum" parameterType="int" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from admin_essay
+        limit #{number}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from admin_essay
+        where admin_essay_id = #{adminEssayId,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.example.demo2.entity.AdminEssay">
+        insert into admin_essay (admin_essay_id, admin_user_id, essay_title,
+        essay_require, essay_example
+        )
+        values (#{adminEssayId,jdbcType=INTEGER}, #{adminUserId,jdbcType=INTEGER}, #{essayTitle,jdbcType=VARCHAR},
+        #{essayRequire,jdbcType=VARCHAR}, #{essayRequire,jdbcType=VARCHAR}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.example.demo2.entity.AdminEssay">
+        insert into admin_essay
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="adminEssayId != null">
+                admin_essay_id,
+            </if>
+            <if test="adminUserId != null">
+                admin_user_id,
+            </if>
+            <if test="essayTitle != null">
+                essay_title,
+            </if>
+            <if test="essayRequire != null">
+                essay_require,
+            </if>
+            <if test="essayExample != null">
+                essay_example,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="adminEssayId != null">
+                #{adminEssayId,jdbcType=INTEGER},
+            </if>
+            <if test="adminUserId != null">
+                #{adminUserId,jdbcType=INTEGER},
+            </if>
+            <if test="essayTitle != null">
+                #{essayTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="essayRequire != null">
+                #{essayRequire,jdbcType=VARCHAR},
+            </if>
+            <if test="essayExample != null">
+                #{essayExample,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.demo2.entity.AdminEssay">
+        update admin_essay
+        <set>
+            <if test="essayTitle != null">
+                essay_title = #{essayTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="essayRequire != null">
+                essay_require = #{essayRequire,jdbcType=VARCHAR},
+            </if>
+            <if test="essayExample != null">
+                essay_example = #{essayExample,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where admin_essay_id = #{adminEssayId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.example.demo2.entity.AdminEssay">
+        update admin_essay
+        set
+        essay_title = #{essayTitle,jdbcType=VARCHAR},
+        essay_require = #{essayRequire,jdbcType=VARCHAR},
+        essay_example = #{essayExample,jdbcType=VARCHAR}
+        where admin_essay_id = #{adminEssayId,jdbcType=INTEGER}
+    </update>
+    <update id="deleteBatch">
+        delete from admin_essay
+        where admin_essay_id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>

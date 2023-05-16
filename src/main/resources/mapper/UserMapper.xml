@@ -3,20 +3,27 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo2.dao.UserMapper">
-    <select id="queryUserByUp" resultType="com.example.demo2.entity.User">
-        select * from users where username = #{username} AND password = #{password}
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.User">
+        <id column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="student_id" jdbcType="VARCHAR" property="studentId"/>
+        <result column="login_password" jdbcType="VARCHAR" property="password"/>
+        <result column="student_name" jdbcType="VARCHAR" property="studentName"/>
+    </resultMap>
+<!--    <select id="queryUserByUp" parameterType="Map" resultType="com.example.demo2.entity.User">-->
+    <select id="queryUserByUp" parameterType="Map" resultMap="BaseResultMap">
+        select * from users where student_name = #{studentName} AND login_password = #{loginPassword}
     </select>
 
-    <select id="queryUserList" resultType="com.example.demo2.entity.User">
+    <select id="queryUserList" parameterType="Map" resultMap="BaseResultMap">
         select * from users
     </select>
 
-    <select id="queryUserByUserName" resultType="com.example.demo2.entity.User">
-        select * from users where username = #{username}
+    <select id="queryUserByUserName" parameterType="Map" resultMap="BaseResultMap">
+        select * from users where student_name = #{studentName}
     </select>
 
     <insert id="addUser" parameterType="com.example.demo2.entity.User">
-        insert into users (username,password) values (#{username},#{password})
+        insert into users (user_id,student_id,login_password,student_name) values (null,#{studentId},#{password},#{studentName})
     </insert>
 
 
