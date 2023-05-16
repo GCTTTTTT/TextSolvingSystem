@@ -118,6 +118,8 @@ function essayEdit() {
     if (id == null) {
         return;
     }
+    alert(id)
+    location.replace("view/index1?id="+id);
     //请求数据
     $.get("/admin/essay/info/" + id, function (r) {
         if (r.resultCode == 200 && r.data != null) {

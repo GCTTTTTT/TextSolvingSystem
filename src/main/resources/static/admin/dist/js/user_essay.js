@@ -109,22 +109,31 @@ $('#saveButton').click(function () {
 });
 
 function essayEdit() {
+    // alert("111")
     reset();
     var id = getSelectedRow();
+    // alert("222")
     if (id == null) {
         return;
     }
+    // alert(id)
+    // alert(r.data.essayRequire)
+    // location.replace("/view/index1?id="+id+"&require="+r.data.essayRequire);
     //请求数据
     $.get("/user/essay/info/" + id, function (r) {
         if (r.resultCode == 200 && r.data != null) {
             //填充数据至modal
-            $("#essayTitle").val(r.data.essayTitle);
-            $("#essayRequire").val(r.data.essayRequire);
-            $("#essayExample").val(r.data.essayExample);
+            // $("#essayTitle").val(r.data.essayTitle);
+            // $("#essayRequire").val(r.data.essayRequire);
+            // $("#essayExample").val(r.data.essayExample);
+
+            alert(id)
+            alert(r.data.essayRequire)
+            location.replace("/view/index1?title="+r.data.essayTitle+"&require="+r.data.essayRequire+"&example="+r.data.essayExample);
         }
     });
     $('.modal-title').html('作文修改');
-    $('#essayModal').modal('show');
+    // $('#essayModal').modal('show');
 }
 
 

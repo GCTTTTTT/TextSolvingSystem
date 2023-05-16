@@ -18,7 +18,26 @@
 
  <script>
 
-  jQuery.browser = {};
+	 //获取路径携带的参数
+	 var requirePosition = (location.search).indexOf("require=");
+	 var title = (location.search).substring(((location.search).indexOf("=") + 1), (location.search).indexOf("&"));
+	 var require = (location.search).substring((requirePosition + 8), (location.search).indexOf("&",requirePosition+1));
+	 var example = (location.search).substring(((location.search).lastIndexOf("=") + 1), (location.search).length);
+
+	// alert(iid)
+	 alert(decodeURI(title))
+	 alert(decodeURI(require))
+	 alert(decodeURI(example))
+
+	 window.onload=function(){
+		 //要初始化的东西
+		 // 注意要解码！！
+
+		 document.getElementById("ques_require").innerHTML = "作文题目： "+decodeURI(title)+"<br>题目要求：" + decodeURI(require);
+
+	 }
+
+	 jQuery.browser = {};
   (function () {
    jQuery.browser.msie = false;
    jQuery.browser.version = 0;
@@ -62,6 +81,7 @@
 			<!-- 头部区域（可配合layui已有的水平导航） -->
 			<ul class="layui-nav layui-layout-left">
 				<li class="layui-nav-item layui-this"><a href="index1">作文自测</a></li>
+				<li class="layui-nav-item"><a href="/user/essay">作文练习</a></li>
 <!--				<li class="layui-nav-item"><a href="">我的班级</a></li>-->
 <!--				<li class="layui-nav-item"><a href="">个人信息</a></li>-->
 				<li class="layui-nav-item"><a href="login">退出登录</a></li>
@@ -574,9 +594,9 @@ Consequently I hold the view that we should do what we can to protect the safety
 	<div class="yq_itme">满分: 100</div>
 <!--	<div class="yq_itme">字数: 500~600</div>-->
 
-<!--		<div class="yq_itme">-->
-<!--&lt;!&ndash;	要求：题目： Measures to Protect China’s Food Security要求：In the Government Work Report released in March 2021, Premier Li Keqiang&ndash;&gt;-->
-<!--	</div>-->
+		<div class="yq_itme" id="ques_require">
+	要求：题目： Measures to Protect China’s Food Security要求：In the Government Work Report released in March 2021, Premier Li Keqiang
+	</div>
 
 
 <!--	<div id="yq_more"  class="yq_itme" ><a href="/index.php?c=v2&a=viewrequest&rid=2369500">更多</a></div>-->
