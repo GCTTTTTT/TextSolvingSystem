@@ -127,8 +127,8 @@ function essayEdit() {
             // $("#essayRequire").val(r.data.essayRequire);
             // $("#essayExample").val(r.data.essayExample);
 
-            alert(id)
-            alert(r.data.essayRequire)
+            // alert(id)
+            // alert(r.data.essayRequire)
             location.replace("/view/index1?title="+r.data.essayTitle+"&require="+r.data.essayRequire+"&example="+r.data.essayExample);
         }
     });

@@ -25,15 +25,16 @@
 	 var example = (location.search).substring(((location.search).lastIndexOf("=") + 1), (location.search).length);
 
 	// alert(iid)
-	 alert(decodeURI(title))
-	 alert(decodeURI(require))
-	 alert(decodeURI(example))
+	//  alert(decodeURI(title))
+	//  alert(decodeURI(require))
+	//  alert(decodeURI(example))
 
 	 window.onload=function(){
 		 //要初始化的东西
 		 // 注意要解码！！
 
-		 document.getElementById("ques_require").innerHTML = "作文题目： "+decodeURI(title)+"<br>题目要求：" + decodeURI(require);
+		 document.getElementById("ques_require").innerHTML = "作文题目： "+decodeURI(title)+"<br/><br/>题目要求：" + decodeURI(require);
+		 document.getElementById("fanwen_content").innerHTML = decodeURI(example)
 
 	 }
 
@@ -274,19 +275,22 @@
 					</div><!-- end etitle -->
 
 		<div id="sponeLeftT" style="width:100%">
-			<div id="contentsW">
+			<div id="contentsW" style="height: 100%;">
 
-				<div  id="contents">
+				<div  id="contents" style="height: 100%;">
 
-								<div id="parahtml" style="white-space:pre-wrap" contenteditable="true">Measures to Protect China's Food Security
-	Food safety is related to the health and quality of life of each of us, but currently, food safety issues happen all around us.
-	As the pace of society quickens, quite a few businesses ignore the importance of food safety and food quality for the sake of profit. And the lack of supervision by relevant departments has led to frequent food safety problems that have troubled quite a few individuals. Thus it's clear that we can see China's food security is important for each of us.
-Consequently I hold the view that we should do what we can to protect the safety of our food, and some suggestions are as follows.
-	To begin with, I hold the view that some relevant national departments should improve the relevant legal systems and introduce relevant policies to regulate the food production process. Moreover, relevant supervisory departments should strengthen supervision and management of food production, transportation and sales to ensure the safety of food. Furthermore, the relevant departments should also strengthen the punishment of food safety issues, so that the relevant businesses and individuals will pay more attention to the food safety issues.
-	Nevertheless, the efforts of relevant national departments alone are not enough to protect the safety of food well. Efforts of other departments and individuals are also important.
-	On the one hand, the relevant publicity department should increase the publicity of food safety issues, so that more people can understand the importance of food safety and food safety treatment methods, in addition to encourage more people to understand how to avoid the occurrence of food safety problems. By doing these, people can be more deeply aware that food safety is closely related to them, so they will pay more attention to food safety in their daily life. And on the other hand, as individuals, which is closely linked with the food safety problems in our daily life, we should always pour attention into food hygiene and safety. To name only a few, we should pour attention into the shelf life of food and do not eat expired or metamorphic food. Besides, we should also check for the safety and quality certification, furthermore, we should check the food production and transportation process whether health security. Moreover, we should also understand the right methods of food preservation. What's more, we should discard the expired and spoiled food in time. If we are harmed because of the food safety problems unfortunately, we should seek some medical treatments immediately. And if necessary, we should report the relevant businesses to the relevant departments to prevent more people from being harmed by the problem food.
-	To sum up, food safety is related to the health of each of us and the quality of life, therefore I think that each of us should make efforts to better protect the safety of our food.
-	Protecting the food safety is protecting ourselves. I believe that if every one of us pays our own efforts, food safety will be improved very well. What 's more, fewer people will be bothered by food safety issues if food safety is guaranteed!</div>
+<!--								<div id="parahtml" style="white-space:pre-wrap" contenteditable="true">-->
+								<div id="parahtml" style="background: aliceblue;height: 100%;border: 1px solid aqua;" contenteditable="true">
+<!--									Measures to Protect China's Food Security-->
+<!--	Food safety is related to the health and quality of life of each of us, but currently, food safety issues happen all around us.-->
+<!--	As the pace of society quickens, quite a few businesses ignore the importance of food safety and food quality for the sake of profit. And the lack of supervision by relevant departments has led to frequent food safety problems that have troubled quite a few individuals. Thus it's clear that we can see China's food security is important for each of us.-->
+<!--Consequently I hold the view that we should do what we can to protect the safety of our food, and some suggestions are as follows.-->
+<!--	To begin with, I hold the view that some relevant national departments should improve the relevant legal systems and introduce relevant policies to regulate the food production process. Moreover, relevant supervisory departments should strengthen supervision and management of food production, transportation and sales to ensure the safety of food. Furthermore, the relevant departments should also strengthen the punishment of food safety issues, so that the relevant businesses and individuals will pay more attention to the food safety issues.-->
+<!--	Nevertheless, the efforts of relevant national departments alone are not enough to protect the safety of food well. Efforts of other departments and individuals are also important.-->
+<!--	On the one hand, the relevant publicity department should increase the publicity of food safety issues, so that more people can understand the importance of food safety and food safety treatment methods, in addition to encourage more people to understand how to avoid the occurrence of food safety problems. By doing these, people can be more deeply aware that food safety is closely related to them, so they will pay more attention to food safety in their daily life. And on the other hand, as individuals, which is closely linked with the food safety problems in our daily life, we should always pour attention into food hygiene and safety. To name only a few, we should pour attention into the shelf life of food and do not eat expired or metamorphic food. Besides, we should also check for the safety and quality certification, furthermore, we should check the food production and transportation process whether health security. Moreover, we should also understand the right methods of food preservation. What's more, we should discard the expired and spoiled food in time. If we are harmed because of the food safety problems unfortunately, we should seek some medical treatments immediately. And if necessary, we should report the relevant businesses to the relevant departments to prevent more people from being harmed by the problem food.-->
+<!--	To sum up, food safety is related to the health of each of us and the quality of life, therefore I think that each of us should make efforts to better protect the safety of our food.-->
+<!--	Protecting the food safety is protecting ourselves. I believe that if every one of us pays our own efforts, food safety will be improved very well. What 's more, fewer people will be bothered by food safety issues if food safety is guaranteed!-->
+								</div>
 
 						</div>
 			</div>
@@ -650,7 +654,7 @@ Consequently I hold the view that we should do what we can to protect the safety
 <!--				<li content="pigai_yaoqiu">要求</li>-->
 
 <!--				<li content="pigai_zhou">成长轨迹</li>-->
-<!--												<li content="i_fanwen">范文</li>-->
+												<li content="i_fanwen">范文</li>
 							</ul>
 		</div>
 <!--		单词拼写检测-->
@@ -1174,7 +1178,7 @@ Consequently I hold the view that we should do what we can to protect the safety
 <!-- </div>-->
 
         <div id="i_fanwen" class="tabtext"  >
-		<div style="text-align: center; padding: 50px 0 ; color: #999 ">老师未加入范文</div>
+		<div id="fanwen_content" style="padding: 50px 0 ; color: #999 ">老师未加入范文</div>
 </div>
 
 <!--                                 批改要求-->

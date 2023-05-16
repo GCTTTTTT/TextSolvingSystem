@@ -19,6 +19,13 @@
     <link rel="stylesheet" th:href="@{/admin/plugins/jqgrid-5.7.0/ui.jqgrid-bootstrap4.css}"/>
     <!-- Theme style -->
     <link rel="stylesheet" th:href="@{/admin/dist/css/adminlte.min.css}">
+
+<!--    layui-->
+    <link rel="stylesheet" href="/assets/js/layui/css/layui.css">
+    <!--	<script src="/assets/js/jquery-3.2.1.min.js"></script>-->
+    <script src="/assets/js/layui/layui.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap.min.js"></script>
+
 </head>
 <style>
     .ui-jqgrid tr.jqgrow td {
@@ -34,11 +41,35 @@
     <!-- Content Wrapper. Contains 图标content -->
     <div class="wrapper">
         <!-- Content Header (图标header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-            </div><!-- /.container-fluid -->
+<!--        <div class="content-header">-->
+<!--            <div class="container-fluid">-->
+<!--            </div>&lt;!&ndash; /.container-fluid &ndash;&gt;-->
+            <!--导航栏test-->
+            <div class="top_box">
+                <div class="layui-layout layui-layout-admin">
+                    <!--        <%&#45;&#45;    nav_try&#45;&#45;%>-->
+                    <div class="layui-header" style="background: rgb(19,29,47); opacity: 1">
+                        <!--            <div class="layui-logo">You Are Right</div>-->
+                        <div class="layui-logo" ><a href="/view/index" style="color: lightblue">作文自动评分系统</a></div>
+                        <!-- 头部区域（可配合layui已有的水平导航） -->
+                        <ul class="layui-nav layui-layout-left">
+                            <li class="layui-nav-item"><a href="/view/index1">作文自测</a></li>
+                            <li class="layui-nav-item layui-this"><a href="/user/essay">作文练习</a></li>
+                            <!--				<li class="layui-nav-item"><a href="">我的班级</a></li>-->
+                            <!--				<li class="layui-nav-item"><a href="">个人信息</a></li>-->
+                            <li class="layui-nav-item"><a href="/view/login">退出登录</a></li>
+                        </ul>
+                        <script>
+                            //JavaScript代码区域
+                            layui.use('element', function() {
+                                var element = layui.element;
+                            });
+                        </script>
+                    </div>
+                </div>
 
-        </div>
+            </div>
+<!--        </div>-->
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
