@@ -280,7 +280,8 @@
 				<div  id="contents" style="height: 100%;">
 
 <!--								<div id="parahtml" style="white-space:pre-wrap" contenteditable="true">-->
-								<div id="parahtml" style="background: aliceblue;height: 100%;border: 1px solid aqua; line-height: 20px" contenteditable="true">
+<!--								<div id="parahtml" style="background: aliceblue;height: 100%;border: 1px solid aqua; line-height: 20px" contenteditable="true">-->
+								<div id="parahtml" style="background: white;height: 100%;border: 1px solid aqua; line-height: 20px" contenteditable="true">
 <!--									Measures to Protect China's Food Security-->
 <!--	Food safety is related to the health and quality of life of each of us, but currently, food safety issues happen all around us.-->
 <!--	As the pace of society quickens, quite a few businesses ignore the importance of food safety and food quality for the sake of profit. And the lack of supervision by relevant departments has led to frequent food safety problems that have troubled quite a few individuals. Thus it's clear that we can see China's food security is important for each of us.-->
@@ -1422,22 +1423,95 @@
 					console.log(arr_Evidence_end);
 
 					for (var i in arr_text_split){
+						console.log(arr_text_split[i])
+						// console.log(typeof arr_text_split[i])
+						// console.log(arr_text_split[i].length)
+						// console.log(arr_text_split[i][arr_text_split[i].length-1])
+						// console.log(arr_text_split[i][arr_text_split[i].length-2])
+					// 	if (arr_text_split[i][arr_text_split[i].length-1] == "n" && arr_text_split[i][arr_text_split[i].length-2] == "\\"){
+					// 		str_res+="<br/>";
+					// 		// alert("111")
+					// 		continue;
+					// }
 						if (arr_Lead_begin.includes(i)) {str_res+=" <span style=\"background-color:palevioletred;\"> " + arr_text_split[i]; continue;}
 						if (arr_Position_begin.includes(i)) {str_res+="<span style=\"background-color:lightblue;\"> " + arr_text_split[i];continue;}
 						if (arr_Claim_begin.includes(i)) {str_res+=" <span style=\"background-color:lightgreen;\"> " + arr_text_split[i];continue;}
 						if (arr_Evidence_begin.includes(i)) {str_res+=" <span style=\"background-color: #ffff66;\"> " + arr_text_split[i];continue;}
 						if (arr_ConcludingStatement_begin.includes(i)) {str_res+="<span style=\"background-color:#ff9966;\"> " + arr_text_split[i];continue;}
 
-						if (arr_Lead_end.includes(i)) {str_res+=" "+arr_text_split[i]+" </span> ";continue;}
-						if (arr_Position_end.includes(i)) {str_res+=arr_text_split[i]+" </span>";continue;}
-						if (arr_Claim_end.includes(i)) {str_res+=" "+arr_text_split[i]+" </span> ";continue;}
-						if (arr_Evidence_end.includes(i)) {str_res+=" "+arr_text_split[i]+" </span> ";continue;}
-						if (arr_ConcludingStatement_end.includes(i)) {str_res+=arr_text_split[i]+" </span>";continue;}
+						if (arr_Lead_end.includes(i)) {
+							str_res+=" "+arr_text_split[i];
+							if (arr_text_split[i][arr_text_split[i].length-1] == "n" && arr_text_split[i][arr_text_split[i].length-2] == "\\"){
+								str_res = str_res.substring(0, str_res.length - 2);
+								str_res+=" </span> ";
+								str_res+="<br/>";
+								// alert("111")
+								continue;
+							}
+							str_res+=" </span> ";
+							continue;
+						}
+						if (arr_Position_end.includes(i)) {
+							str_res+=arr_text_split[i];
+							if (arr_text_split[i][arr_text_split[i].length-1] == "n" && arr_text_split[i][arr_text_split[i].length-2] == "\\"){
+								str_res = str_res.substring(0, str_res.length - 2);
+								str_res+=" </span> ";
+								str_res+="<br/>";
+								// alert("111")
+								continue;
+							}
+							str_res+=" </span> ";
+							continue;}
+						if (arr_Claim_end.includes(i)) {
+							str_res+=" "+arr_text_split[i];
+							if (arr_text_split[i][arr_text_split[i].length-1] == "n" && arr_text_split[i][arr_text_split[i].length-2] == "\\"){
+								str_res = str_res.substring(0, str_res.length - 2);
+								str_res+=" </span> ";
+								str_res+="<br/>";
+								// alert("111")
+								continue;
+							}
+							str_res+=" </span> ";
+							continue;
+						}
+						if (arr_Evidence_end.includes(i)) {
+							str_res+=" "+arr_text_split[i];
+							if (arr_text_split[i][arr_text_split[i].length-1] == "n" && arr_text_split[i][arr_text_split[i].length-2] == "\\"){
+								str_res = str_res.substring(0, str_res.length - 2);
+								str_res+=" </span> ";
+								str_res+="<br/>";
+								// alert("111")
+								continue;
+							}
+							str_res+=" </span> ";
+							continue;}
+						if (arr_ConcludingStatement_end.includes(i)) {
+							str_res+=arr_text_split[i];
+							if (arr_text_split[i][arr_text_split[i].length-1] == "n" && arr_text_split[i][arr_text_split[i].length-2] == "\\"){
+								str_res = str_res.substring(0, str_res.length - 2);
+								str_res+=" </span> ";
+								str_res+="<br/>";
+								// alert("111")
+								continue;
+							}
+							str_res+=" </span> ";
+							continue;}
+
 
 						if (i != 0){
 							str_res+=" "+arr_text_split[i];
+							if (arr_text_split[i][arr_text_split[i].length-1] == "n" && arr_text_split[i][arr_text_split[i].length-2] == "\\"){
+								str_res = str_res.substring(0, str_res.length - 2);
+								str_res+="<br/>";
+							}
 						}
-						else str_res+=arr_text_split[i];
+						else {
+							str_res+=arr_text_split[i];
+							if (arr_text_split[i][arr_text_split[i].length-1] == "n" && arr_text_split[i][arr_text_split[i].length-2] == "\\"){
+								str_res = str_res.substring(0, str_res.length - 2);
+								str_res+="<br/>";
+							}
+						}
 
 					}
 					console.log(str_res);
