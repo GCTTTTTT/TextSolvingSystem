@@ -80,5 +80,14 @@ public class ViewController {
         return "index1";
     }
 
+    @GetMapping("testCodeHTML")
+    public String testCodeHTML() throws UnknownHostException {
+        System.out.println("testCodeHTML");
+        InetAddress addr = InetAddress.getLocalHost();
+        System.out.println("Local HostAddress: "+addr.getHostAddress());
+        String hostname = addr.getHostName();
+        System.out.println("Local host name: "+hostname);
+        return "testCodeHTML";
+    }
 
 }
