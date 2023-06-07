@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/login.css">
 
+<!--    layui-->
+    <link rel="stylesheet" href="/assets/js/layui/css/layui.css">
+    <!--	<script src="/assets/js/jquery-3.2.1.min.js"></script>-->
+    <script src="/assets/js/layui/layui.js"></script>
+<!--    <script src="/assets/js/bootstrap/js/bootstrap.min.js"></script>-->
+
+
 </head>
 <body>
     <div id="particles-js"></div>
@@ -14,13 +21,20 @@
         <div style="height: 300px;width: 100%;text-align: center;margin: auto;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
             <!--			<img src="../assets/img/zhihu_logo.png" />-->
             <span style="font-size: 50px;font-weight: bold;display: inline-block;">基于论证的作文自动评分系统</span>
-            <h2>分析文本的论证结构，找论点，查论据，一步就行！</h2>
-            <div style="height: 200px;width: 25%;display: block;margin: 0 auto;">
+            <h2 style="margin-top: 2%;">分析文本的论证结构，找论点，查论据，一步就行！</h2>
+<!--            <div style="height: 200px;width: 25%;display: block;margin: 0 auto;">-->
+            <div style="height: 200px;width: 25%;display: block;margin: 3% auto;">
 <!--                <div style="float:left"><a href="/view/demo1">游客访问</a></div>-->
-                <div style="float:left"><a href="/view/login">学生登录</a></div>
+                <div style="float:left">
+                    <button id="#" type="button" onclick="window.location.href='/view/login'" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">学生登录</button>
+<!--                    <a href="/view/login">学生登录</a>-->
+                </div>
 <!--                <div style="float:right"><a href="/view/login">前往登录</a></div></div>-->
 <!--                <div style="float:right"><a href="/view/login">我是老师</a></div></div>-->
-                <div style="float:right"><a href="/admin/login">管理员登录</a></div></div>
+                <div style="float:right">
+                    <button id="#" type="button" onclick="window.location.href='/admin/login'" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">管理员登录</button>
+<!--                    <a href="/admin/login">管理员登录</a>-->
+                </div></div>
         </div>
 
 
